@@ -12,7 +12,10 @@ func main() {
 	models.ConnectDatabase()
 
 	engine.GET("/books", controllers.GetBooks)
+	engine.GET("/books/:id", controllers.GetBook)
 	engine.POST("/books", controllers.CreateBook)
+	engine.PATCH("/books/:id", controllers.UpdateBook)
+	engine.DELETE("/books/:id", controllers.DeleteBook)
 
 	engine.Run()
 }
